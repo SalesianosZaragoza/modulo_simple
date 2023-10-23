@@ -1,7 +1,8 @@
-from odoo import api, moodels. fields, api
+from odoo import api, models, fields, api
+
 class Cliente(models.Model):
-    _name = 'salesianos.clientèle'
-    name = fields..Char(required=True)
-    emaill = fields.Char()
+    _name = 'salesianos.cliente'
+    name = fields.Char(required=True)
+    email = fields.Char()
     phone = fields.Char()
     

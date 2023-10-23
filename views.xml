@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-	<menuitem
-		id="compras"
-		name="compras"
-		sequence="10"/>
-	<menuitem
-		id="cliente"
-		name="cliente"
-		action="action_id"
-		parent="compras"
-		sequence="10"/>
+
 	<record id="cliente_action" model="ir.actions.act_window">
 		<field name="name">Action cliente</field>
 		<field name="res_model">salesianos.cliente</field>
 		<field name="view_mode">tree,form</field>
+	</record>
+
+
+	<record id="cliente_form" model="ir.ui.view">
+		<field name="name">cliente.form</field>
+		<field name="model">salesianos.cliente</field>
 		
-
-	</record>
-	<record id="ir.ui_view" model="cliente">
-		<field name="field_name">field_value</field>
-		<field name="help" type="html">
-			<span>debes rellenar todos los datos</span>
-		</field>
 		<field name="arch" type="html">
-			<tree string="cliente">
-				<field name="name"/>
-				<field name="email"/>
-				<field name="phone"/>
-			
-			</tree>
+			<form string="cliente">
+				<field name="name" />
+				<field name="email" />
+				<field name="phone" />
+
+			</form>
 		</field>
 	</record>
+	<!-- menuitem -->
+	<menuitem
+		id="compras"
+		name="compras"
+		sequence="10" />
 
+	<menuitem
+		id="cliente"
+		name="cliente"
+		action="cliente_action"
+		parent="compras"
+		sequence="10" />
 </odoo>
