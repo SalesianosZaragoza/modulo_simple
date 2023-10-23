@@ -11,4 +11,6 @@ class Vendedor(models.Model):
     _name = 'salesianos.vendedor'
     name = fields.Char(required=True)
     company = fields.Char()
+    fecha_incorporacion = fields.Date()
+    fecha_despido = fields.Date()
     cliente = fields.One2many(comodel_name='salesianos.cliente', inverse_name='vendedor')

@@ -11,7 +11,18 @@
 	<record id="vendedor_action" model="ir.actions.act_window">
 		<field name="name">Action vendedor</field>
 		<field name="res_model">salesianos.vendedor</field>
-		<field name="view_mode">tree,form</field>
+		<field name="view_mode">tree,form,calendar</field>
+	</record>
+	<!--add calendar view for vendedor-->
+	<record id="vendedor_calendar" model="ir.ui.view">
+		<field name="name">vendedor.calendar</field>
+		<field name="model">salesianos.vendedor</field>
+		<field name="arch" type="xml">
+			<calendar string="vendedor" date_start="fecha_incorporacion" date_stop="fecha_despido">
+				<field name="name" />
+				<field name="company" />
+			</calendar>
+		</field>
 	</record>
 
 
@@ -32,7 +43,7 @@
 		</field>
 	</record>
 	<!-- add client tree view -->
-	<!--
+
 	<record id="cliente_tree" model="ir.ui.view">
 		<field name="name">cliente.tree</field>
 		<field name="model">salesianos.cliente</field>
@@ -44,7 +55,7 @@
 			</tree>
 		</field>
 	</record>
-	-->
+	
 	<!-- menuitem -->
 	<menuitem
 		id="compras"
