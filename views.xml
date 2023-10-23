@@ -33,7 +33,7 @@
 				<field name="name" />
 				<field name="company" />
 				<field name="fecha_incorporacion" />
-				<filter name="despedidos" string="despedidos" domain="[('fecha_despido', '&lt;', 'datetime.date.today()')]"  />
+				<filter name="despedidos" string="despedidos" domain="[('fecha_despido', '&lt;', datetime.date.today())]"  />
 				<group string="Zona de agrupamientos">
 					<filter name="agrupar por empresa" 
 					string="agrupar por empresa" 
