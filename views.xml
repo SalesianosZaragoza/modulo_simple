@@ -24,6 +24,20 @@
 			</calendar>
 		</field>
 	</record>
+	<!--add search view for vendedor-->
+	<record id="vendedor_search" model="ir.ui.view">
+		<field name="name">vendedor.search</field>
+		<field name="model">salesianos.vendedor</field>
+		<field name="arch" type="xml">
+			<search string="vendedor">
+				<field name="name" />
+				<field name="company" />
+				<field name="fecha_incorporacion" />
+			</search>
+		</field>
+	</record>
+
+
 
 
 	<record id="cliente_form" model="ir.ui.view">
