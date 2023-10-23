@@ -5,4 +5,10 @@ class Cliente(models.Model):
     name = fields.Char(required=True)
     email = fields.Char()
     phone = fields.Char()
-    
+    vendedor = fields.Many2one(comodel_name='salesianos.vendedor', string='vendedor')
+
+class Vendedor(models.Model):
+    _name = 'salesianos.vendedor'
+    name = fields.Char(required=True)
+    company = fields.Char()
+    cliente = fields.One2many(comodel_name='salesianos.cliente', inverse_name='vendedor')
