@@ -13,12 +13,15 @@
 		<field name="name">cliente.form</field>
 		<field name="model">salesianos.cliente</field>
 		
-		<field name="arch" type="html">
+		<field name="arch" type="xml">
 			<form string="cliente">
-				<field name="name" />
-				<field name="email" />
-				<field name="phone" />
-
+				<sheet>
+					<group>
+						<field name="name" />
+						<field name="email" />
+						<field name="phone" />
+					</group>
+				</sheet>
 			</form>
 		</field>
 	</record>
