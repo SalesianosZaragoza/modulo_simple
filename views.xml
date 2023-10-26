@@ -57,6 +57,7 @@
 						<field name="name" />
 						<field name="email" />
 						<field name="phone" />
+						<field name="edad" />
 					</group>
 				</sheet>
 			</form>
