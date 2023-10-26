@@ -18,11 +18,24 @@ class Cliente(models.Model):
                 raise models.ValidationError("El cliente "+record.name+"  no puede ser tan viejo")
             else:
                 pass
+    
+    altura = fields.Float()
+    peso = fields.Float()
+    imc = fields.Float(compute='_compute_imc', store=True)
+
+
+    @api.depends('altura', 'peso')
+    def _compute_imc(self):
+        for record in self:
+            if record.altura > 0:
+                record.imc = record.peso / (record.altura * record.altura)
+            else:
+                record.imc = 0
 
 class Vendedor(models.Model):
     _name = 'salesianos.vendedor'
     name = fields.Char(required=True)
     company = fields.Char()
     fecha_incorporacion = fields.Date()
-    fecha_despido = fields.Date()
+    fecha_despido = fields.Date(index=True)
     cliente = fields.One2many(comodel_name='salesianos.cliente', inverse_name='vendedor')
