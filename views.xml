@@ -57,6 +57,10 @@
 						<field name="name" />
 						<field name="email" />
 						<field name="phone" />
+						<field name="edad" />
+						<field name="altura" />
+						<field name="peso" />
+						<field name="imc" />
 					</group>
 				</sheet>
 			</form>
