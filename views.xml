@@ -31,7 +31,7 @@
 				<field name="altura"/>
 				<field name="peso"/>
 				<field name="imc"/>
-				<field name="proveedor" />
+				<field name="proveedor" widget="many2many_tags" />
 			</tree>
 		</field>
 	</record>
