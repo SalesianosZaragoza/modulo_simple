@@ -31,7 +31,14 @@ class Cliente(models.Model):
                 record.imc = record.peso / (record.altura * record.altura)
             else:
                 record.imc = 0
+    proveedor = fields.Many2many(comodel_name='salesianos.proveedor', string='proveedor')
 
+class proveedor(models.Model):
+    _name = 'salesianos.proveedor'
+    cif = fields.Char(required=True)
+    titular = fields.Char()
+    #cliente = fields.Many2many(comodel_name='salesianos.cliente', string='cliente')
+    
 class Vendedor(models.Model):
     _name = 'salesianos.vendedor'
     name = fields.Char(required=True)
