@@ -31,6 +31,7 @@
 				<field name="altura"/>
 				<field name="peso"/>
 				<field name="imc"/>
+				<field name="proveedor" />
 			</tree>
 		</field>
 	</record>
@@ -73,6 +74,7 @@
 						<field name="altura"/>
 						<field name="peso"/>
 						<field name="imc"/>
+						<field name="proveedor" />
 					</group>
 				</sheet>
 			</form>
