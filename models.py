@@ -1,6 +1,6 @@
 from odoo import api, models, fields
 
-
+# imaginad que esta en otro modulo
 class Base(models.Model):
     _name = 'salesianos.base'
     name = fields.Char(required=True, string='Nombre')
@@ -8,11 +8,24 @@ class Base(models.Model):
                              required=True, string='Color RGB')
 
 class CMYK(models.Model):
+    # do not generate a new table in the database
+    # extiendo la tabla
     _inherit = 'salesianos.base'
     color_cmyk = fields.Selection(selection=[
                 ('cyan','Color cyan'), 
                 ('magenta','Color magenta'), ('yellow',"Color yellow")], 
                              required=True, string='Color CMYK')
+    
+
+class ColorBlind(models.Model):
+    # generates a new table in the database
+    #replico la tabla
+    _inherit = 'salesianos.base'
+    _name = 'salesianos.colorblind'
+    color_blind = fields.Selection(selection=[ ('brown','Color brown'),
+                                              ('blue','Color blue'), 
+                                              ('pink',"Color pink")],
+                             required=True, string='Color Blind')
 
 
 class Cliente(models.Model):
