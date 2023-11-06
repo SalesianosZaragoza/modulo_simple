@@ -11,8 +11,7 @@ class CMYK(models.Model):
     _inherit = 'salesianos.base'
     color_cmyk = fields.Selection(selection=[
                 ('cyan','Color cyan'), 
-                ('magenta','Color magenta'), 
-                ('yellow',"Color yellow")], 
+                ('magenta','Color magenta'), ('yellow',"Color yellow")], 
                              required=True, string='Color CMYK')
 
 
