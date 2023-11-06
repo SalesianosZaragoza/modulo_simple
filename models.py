@@ -22,6 +22,7 @@ class ColorBlind(models.Model):
     #replico la tabla
     _inherit = 'salesianos.base'
     _name = 'salesianos.colorblind'
+    
     color_blind = fields.Selection(selection=[ ('brown','Color brown'),
                                               ('blue','Color blue'), 
                                               ('pink',"Color pink")],
