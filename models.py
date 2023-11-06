@@ -1,6 +1,21 @@
 from odoo import api, models, fields
 
 
+class Base(models.Model):
+    _name = 'salesianos.base'
+    name = fields.Char(required=True, string='Nombre')
+    color = fields.Selection(selection=[('rojo','Color rojo'), ('verde','Color verde'), ('azul',"Color Azul")], 
+                             required=True, string='Color RGB')
+
+class CMYK(models.Model):
+    _inherit = 'salesianos.base'
+    color_cmyk = fields.Selection(selection=[
+                ('cyan','Color cyan'), 
+                ('magenta','Color magenta'), 
+                ('yellow',"Color yellow")], 
+                             required=True, string='Color CMYK')
+
+
 class Cliente(models.Model):
     _name = 'salesianos.cliente'
     name = fields.Char(required=True)
@@ -35,6 +50,11 @@ class Proveedor(models.Model):
     name = fields.Char(required=True)
     cif = fields.Char(required=True)
     titular = fields.Char()
+    tipo = fields.Selection(selection=[
+                                        ('interno', 'Prov Interno'), 
+                                       ('externo', 'Prov Externo')
+                                    ], 
+                            required=True)
     #cliente = fields.Many2many(comodel_name='salesianos.cliente', string='cliente')
 
 class Vendedor(models.Model):
